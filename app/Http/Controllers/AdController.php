@@ -18,21 +18,19 @@ class AdController extends Controller
      */
     public function index()
     {
-        $ads = Ad::query()->simplePaginate();
+        $ads = Ad::all();
         return view('ads.index', ['ads' => $ads]);
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @param Ad $ad
      * @return void
      */
-    public function create(Ad $ad)
+    public function create()
     {
         $categories = Category::all();
         return view('ads.create', [
-            'ad' => $ad,
             'categories' => $categories
         ]);
     }
@@ -40,10 +38,10 @@ class AdController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param Request $request
+     * @param AdRequest $request
      * @return Response
      */
-    public function store(Request $request)
+    public function store(AdRequest $request)
     {
         Ad::create($this->preparedData($request));
         return redirect()->route('ad.index');

@@ -24,7 +24,6 @@ class CreateAdsTable extends Migration
             $table->float('price');
             $table->unsignedInteger('category_id')->nullable();
             $table->unsignedInteger('user_id')->nullable();
-            $table->softDeletes();
             $table->timestamps();
         });
     }

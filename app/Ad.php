@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Ad extends Model
 {
-    protected $dates = ['created_at', 'deleted_at'];
+    protected $dates = ['created_at'];
 
     protected $fillable = [
         'name', 'city', 'address', 'phone', 'category_id', 'description', 'price', 'user_id', 'image',

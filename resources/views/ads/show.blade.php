@@ -2,7 +2,6 @@
 
 @section('content')
 <div class="container">
-    <!-- Portfolio Item Row -->
     <div class="row">
         <div class="col-12">
             <h1>{{ $ad->name }}</h1>
